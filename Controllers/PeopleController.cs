@@ -26,9 +26,9 @@ namespace MyAlumniApp.Controllers
             var query = _context.People.AsQueryable();
 
             if (!string.IsNullOrEmpty(keyword))
-                query = query.Where(p => p.Name.Contains(keyword) ||
-                                         p.Description.Contains(keyword) ||
-                                         p.Domain.Contains(keyword));
+                query = query.Where(p => (p.Name != null && p.Name.Contains(keyword)) ||
+                                         (p.Description != null && p.Description.Contains(keyword)) ||
+                                         (p.Domain != null && p.Domain.Contains(keyword)));
 
             if (!string.IsNullOrEmpty(year))
                 query = query.Where(p => p.Batch_Year == year);
