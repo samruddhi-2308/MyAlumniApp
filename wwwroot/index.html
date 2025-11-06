@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APS Ahilyanagar Alumni</title>
+  <link rel="stylesheet" href="design.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo-section">
+        <img src="LOGO.png" alt="APS Logo" class="logo-img" />
+        <div class="header-title">
+          <h1>APS Ahilyanagar Alumni</h1>
+          <p class="subtitle">Proud Past • Bright Future</p>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="https://www.apsahmednagar.com/" class="nav-link active">Home</a>
+      </nav>
+    </div>
+  </header>
+<br><br><br><br><br>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+     <div class="alumni-logo">
+      <img src="aps alumini logo1.jpg" alt="APS alumni Logo">
+    </div>
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2 class="hero-title">Alumini Association 2025-26</h2>
+      <p class="hero-description">
+        Join the network that celebrates achievements and builds lifelong connections.
+      </p>
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeEfUpqp0HOp7mN25hWG-UaPUmzcCxCdDXEdpEKwsELjRmChw/viewform"
+        target="_blank"
+        class="cta-button"
+      >
+        <i class="fas fa-user-plus"></i> Become a Member
+      </a>
+    </div>
+  </section>
+
+  <!-- SEARCH SECTION -->
+  <section class="search-section">
+    <div class="container glass-box">
+      <h2 class="glass-heading">Search and filter through years of achievements and stories</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search alumni..." />
+        <button id="searchBtn" class="search-button"><i class="fas fa-search"></i> Search</button>
+        <button id="clearFilters" class="clear-filters"><i class="fas fa-times"></i> Clear</button>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label for="yearFilter"><i class="fas fa-calendar"></i> Year</label>
+          <select id="yearFilter">
+            <option value="">All Years</option>
+            <option value="2005">2005</option>
+            <option value="2008">2008</option>
+            <option value="2010">2010</option>
+            <option value="2012">2012</option>
+            <option value="2015">2015</option>
+            <option value="2018">2018</option>
+            <option value="2020">2020</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+<div class="filter-group">
+  <label for="organizationFilter"><i class="fas fa-building"></i> Organization</label>
+  <select id="organizationFilter">
+    <option value="">All Organizations</option>
+    <option value="Indian Army">Indian Army</option>
+    <option value="Oracle / MIT Manipal">Oracle</option>
+    <option value="SPPU">SPPU</option>
+    <option value="Indian Air Force">Indian Air Force</option>
+    <option value="Indian Navy">Indian Navy</option>
+    <option value="IIT Varanasi">IIT Varanasi</option>
+    <option value="Sevankur Bharat">Sevankur Bharat</option>
+  </select>
+</div>
+
+        <div class="filter-group">
+  <label for="achievementFilter"><i class="fas fa-trophy"></i> Achievement</label>
+  <select id="achievementFilter">
+    <option value="">All Achievements</option>
+    <option value="Cleared JEE Mains, IIT Varanasi">Cleared JEE Mains, IIT Varanasi</option>
+    <option value="Exemplary work in establishing Motorola communication grid">Establishing Motorola communinites</option>
+    <option value="President’s Plaque Award">President's Plaque Award</option>
+    <option value="Promoted to Lieutenant Commander">Lieutenant Commander</option>
+    <option value="Joined Army (Agniveer Technical Branch)">Joined Army</option>
+    <option value="Joined Army (Agniveer)">Joined Army(Agniveer)</option>
+    <option value="2nd Rank in State Level Avishkar Competition">State Level Avishkar Competition</option>
+    <option value="Met President Droupadi Murmu under Sevankur Bharat Programme">Met President</option>
+    <option value="Joined Oracle as Associate Software Developer">Joined Oracle</option>
+  </select>
+</div>
+
+
+        <div class="filter-group">
+          <label for="awardFilter"><i class="fas fa-trophy"></i> Category</label>
+          <select id="awardFilter">
+            <option value="">All Categories</option>
+            <option value="Academics">Academics</option>
+            <option value="Defence">Defence</option>
+            <option value="Research">Research</option>
+            <option value="Social / Leadership">Social</option>
+            <option value="Technology">Technology</option>
+          </select>
+        </div>
+
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ALUMNI SECTION -->
+  <section id="alumni" class="alumni-section">
+    <div class="container">
+      <h2 class="section-title">Discover Our Notable Alumni</h2>
+      <div id="alumniGrid" class="alumni-grid"></div>
+      <div id="noResults" class="no-results" style="display: none">
+        <i class="fas fa-search"></i>
+        <h3>No Alumni Found</h3>
+        <p>Try changing your search or filter options.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS CONTACT SECTION -->
+  <section class="achievements-contact">
+    <div class="container">
+      <h2>For any achievements, kindly contact:</h2>
+      <p><strong>BK PREMAMADHU VISHWAKARMA</strong></p>
+      <p>Email: <a href="mailto:pulkitapsalumni@gmail.com">pulkitapsalumni@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919960874565">9960874565</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+ <footer id="contact" class="footer">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p class="footer-description">
+        APS Ahilyanagar Alumni Association fosters lifelong bonds and celebrates
+        the achievements of our remarkable alumni community.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact + Map side by side -->
+    <div class="footer-column contact-info">
+  <h4>Contact</h4>
+  <p><i class="fas fa-envelope"></i> alumni@apsahilyanagar.edu.in</p>
+  <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+  <p><i class="fas fa-map-marker-alt"></i> Ahilyanagar, Maharashtra, India</p>
+
+  <!-- Map below contact -->
+  <div class="site-footer">
+    <iframe
+      src="https://www.google.com/maps?q=Army%20Public%20School%20Pune&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+  <!-- Follow Us centered at bottom -->
+  <div class="footer-follow">
+    <h4>Follow Us</h4>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 APS Ahilyanagar Alumni. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+document.getElementById('searchBtn').addEventListener('click', function () {
+  const params = new URLSearchParams({
+    keyword: document.getElementById('searchInput').value,
+    year: document.getElementById('yearFilter').value,
+    organization: document.getElementById('organizationFilter').value,
+    achievement: document.getElementById('achievementFilter').value,
+    category: document.getElementById('awardFilter').value
+  });
+
+  window.location.href = `results.html?${params.toString()}`;
+});
+</script>
+ <script>
+const notableAlumni = [
+  {
+    id: 1,
+    name: "Sandeep Kumar Pandey",
+    year: null,
+    achievement: "Military Service",
+    role: "Captain, Indian Army",
+    description:
+      "Awarded for exemplary work in establishing digital Motorola-based communication grid for Infantry Combat Vehicle movement during Amarnath Yatra; conducted numerous successful operations against insurgent groups, seizing arms and maintaining regional peace.",
+    category: "Military",
+  },
+  {
+    id: 2,
+    name: "P. Divya Bharathi",
+    year: null,
+    achievement: "Defence Excellence",
+    role: "Flying Officer, Indian Air Force",
+    description:
+      "Recipient of the President’s Plaque Award for Best Performance in Professional Subjects, demonstrating exceptional proficiency and leadership in military training and operations.",
+    category: "Military",
+  },
+  {
+    id: 3,
+    name: "Rishabh Jain",
+    year: "2021",
+    achievement: "Technology & Placement",
+    role: "Associate Software Developer, Oracle",
+    description:
+      "Secured placement at Oracle and completing B.Tech from MIT Manipal; recognized for technical excellence and promising career in software development.",
+    category: "Technology",
+  },
+];
+
+function displayNotableAlumni() {
+  const grid = document.getElementById("alumniGrid");
+  grid.innerHTML = notableAlumni
+    .map(
+      (a) => `
+      <div class="alumni-card">
+        <h3>${a.name}</h3>
+        <p><strong>Role:</strong> ${a.role}</p>
+        <p><strong>Achievement:</strong> ${a.achievement}</p>
+        <p>${a.description}</p>
+        <span class="badge">${a.category}</span>
+      </div>
+    `
+    )
+    .join("");
+}
+
+// Call the function immediately
+displayNotableAlumni();
+</script>
+
+</body>
+</html>
+
+
+

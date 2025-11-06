@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APS Ahilyanagar Alumni</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+   <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo-section">
+        <img src="LOGO.png" alt="APS Logo" class="logo-img" />
+        <div class="header-title">
+          <h1>APS Ahilyanagar Alumni</h1>
+          <p class="subtitle">Proud Past • Bright Future</p>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main> <h2>Meet Our Alumni</h2>
+  <p>Our alumni are shaping the world with excellence and leadership.</p> <div id="results"></div>
+   <section id="home" class="home-section">
+  
+
+  <div class="alumni-cards"></div>
+</section>
+
+    
+  </main>
+
+   <!-- FOOTER -->
+ <footer id="contact" class="footer">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p class="footer-description">
+        APS Ahilyanagar Alumni Association fosters lifelong bonds and celebrates
+        the achievements of our remarkable alumni community.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact + Map side by side -->
+    <div class="footer-column contact-info">
+  <h4>Contact</h4>
+  <p><i class="fas fa-envelope"></i> alumni@apsahilyanagar.edu.in</p>
+  <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+  <p><i class="fas fa-map-marker-alt"></i> Ahilyanagar, Maharashtra, India</p>
+
+  <!-- Map below contact -->
+  <div class="site-footer">
+    <iframe
+      src="https://www.google.com/maps?q=Army%20Public%20School%20Pune&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+  <!-- Follow Us centered at bottom -->
+  <div class="footer-follow">
+    <h4>Follow Us</h4>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 APS Ahilyanagar Alumni. All Rights Reserved.
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".header");
+      if (window.scrollY > 80) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+  </script>
+  <script>
+async function loadResults() {
+  const params = new URLSearchParams(window.location.search);
+  const res = await fetch(`/api/people/search?${params.toString()}`);
+  const data = await res.json();
+
+  const container = document.getElementById('results');
+
+  if (data.length === 0) {
+    container.innerHTML = "<p>No results found.</p>";
+    return;
+  }
+container.innerHTML = data.map(p => {
+  const imageList = (p.imgs || '')
+    .split(',')
+    .map(img => img.trim())
+    .filter(img => img.length > 0);
+
+  const imageHtml = imageList.length
+    ? imageList.map(img => `
+        <img src="/images/${img}" alt="${p.name}" class="alumni-img">
+      `).join('')
+    : '<p class="no-images">No images available</p>';
+
+  return `
+    <div class="alumni-card">
+      <div class="card-content">
+        <h3>${p.name}</h3>
+        <p class="meta"><b>Organization:</b> ${p.organization || 'N/A'}</p>
+        <p class="meta"><b>Year:</b> ${p.batch_Year || 'N/A'}</p>
+        <p class="meta"><b>Achievement:</b> ${p.award_Or_Achievement || 'N/A'}</p>
+        <div class="images-container">${imageHtml}</div>
+        <p class="description">${p.description || ''}</p>
+      </div>
+    </div>
+  `;
+}).join('');
+
+ 
+}
+
+loadResults();
+</script>
+
+
+</body>
+</html>
