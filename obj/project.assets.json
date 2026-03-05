@@ -2863,11 +2863,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyAlumniApp\\MyAlumniApp.csproj",
+      "projectUniqueName": "C:\\Users\\Samruddhi\\projects\\MyAlumniApp\\MyAlumniApp.csproj",
       "projectName": "MyAlumniApp",
-      "projectPath": "D:\\MyAlumniApp\\MyAlumniApp.csproj",
+      "projectPath": "C:\\Users\\Samruddhi\\projects\\MyAlumniApp\\MyAlumniApp.csproj",
       "packagesPath": "C:\\Users\\Samruddhi\\.nuget\\packages\\",
-      "outputPath": "D:\\MyAlumniApp\\obj\\",
+      "outputPath": "C:\\Users\\Samruddhi\\projects\\MyAlumniApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Samruddhi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2926,6 +2926,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.11, 9.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.11, 9.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2934,7 +2944,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
